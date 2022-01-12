@@ -1,0 +1,13 @@
+mixin contact (contactClass, iconClass, contactType, contact, linkType)
+    div(class= `contacts__${contactClass}`)
+        i(class= iconClass)= contactType
+        .text-secondary
+            a(href= `${linkType}:${contact}` class= 'text-secondary')= contact
+main
+  section.contacts
+      h2 Контакты
+      .contacts__list
+          +contact('email','fas fa-envelope', ' E-mail', 'nataliech0409@gmail.com', 'mailto')
+          +contact('phone','fas fa-mobile-alt', ' Телефон', '+7-953-720-82-44', 'tel')
+          +contact('address','fas fa-marker-alt', ' Адрес', 'Россия, Мичуринск', '')
+  include ../../modules/social-icons/social-icons

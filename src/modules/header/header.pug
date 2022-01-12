@@ -1,0 +1,12 @@
+mixin navLink (linkText, ref)
+    li.menu-nav__item
+        a(class='menu-nav__link' href=ref)= linkText
+header
+ div.menu-btn
+     span.menu-btn__burger
+ nav.nav
+   ul.menu-nav
+       +navLink('Главная', 'index.html')
+       +navLink('Обо мне', 'about.html')
+       +navLink('Проекты', 'projects.html')
+       +navLink('Контакты', 'contacts.html')

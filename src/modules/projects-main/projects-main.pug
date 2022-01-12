@@ -1,0 +1,19 @@
+mixin projectItem (imageSrc, imageAlt, previewLink, githubLink)
+  .projects__item
+      img(src= imageSrc alt= imageAlt)
+      .projects__btns
+            a.projects__btn(href= previewLink target='_blank' rel="noopener noreferrer")
+                i.fas.fa-eye Посмотреть
+            a.projects__btn(href= githubLink target='_blank' rel="noopener noreferrer")
+                i.fab.fa-github Посмотреть код
+
+main
+  section.projects
+    .projects__bio-image
+        h1.text-secondary Мои проекты
+    .projects__items
+        +projectItem('assets/css-sg.jpg', 'CSS Styles Generator', 'https://natalielinen.github.io/css-styles-generator/', 'https://github.com/Natalielinen/css-styles-generator')
+        +projectItem('assets/ingredients-calc.png', 'Ingredients Calculator', 'https://natalielinen.github.io/ingredients-calculator/', 'https://github.com/Natalielinen/ingredients-calculator')
+        +projectItem('assets/math.jpg', 'project title3', 'https://natalielinen.github.io/math-calculators/', 'https://github.com/Natalielinen/math-calculators')
+
+  include ../../modules/social-icons/social-icons
